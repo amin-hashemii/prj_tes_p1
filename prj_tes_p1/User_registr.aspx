@@ -16,30 +16,33 @@
 
             <div class="row_pnl">
                 <label>شماره تلفن</label>
-                <asp:TextBox Class="txt_style" ID="TextBox1" runat="server"></asp:TextBox>
+                <asp:TextBox Class="txt_style" ID="Txt_phone" runat="server"></asp:TextBox>
             </div>
 
             <div class="row_pnl">
                 <label>نام کاربری</label>
-                <asp:TextBox Class="txt_style" ID="TextBox2" runat="server"></asp:TextBox>
+                <asp:TextBox Class="txt_style" ID="Txt_username" runat="server"></asp:TextBox>
             </div>
 
             <div class="row_pnl">
                 <label>رمز</label>
-                <asp:TextBox Class="txt_style" ID="TextBox3" runat="server"></asp:TextBox>
+                <asp:TextBox Class="txt_style" ID="Txt_password" runat="server"></asp:TextBox>
             </div>
 
             <div class="row_pnl">
                 <label>نام</label>
-                <asp:TextBox Class="txt_style" ID="TextBox4" runat="server"></asp:TextBox>
+                <asp:TextBox Class="txt_style" ID="Txt_name" runat="server"></asp:TextBox>
             </div>
 
             <div class="row_pnl">
                 <label>فامیلی</label>
-                <asp:TextBox Class="txt_style" ID="TextBox5" runat="server"></asp:TextBox>
+                <asp:TextBox Class="txt_style" ID="Txt_family" runat="server"></asp:TextBox>
             </div>
             <div class="row_pnl">
-                <asp:Button Class="btn_confirm" ID="Button1" runat="server" Text="تایید" />
+                <label>
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:db_prj_proConnectionString %>" ProviderName="<%$ ConnectionStrings:db_prj_proConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [users]"></asp:SqlDataSource>
+                </label>
+                <asp:Button Class="btn_confirm" ID="Btn_confirmregister" runat="server" Text="تایید" OnClick="Button1_Click" />
             </div>
 
         </div>
