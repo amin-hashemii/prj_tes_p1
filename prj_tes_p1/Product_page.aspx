@@ -27,9 +27,12 @@
              <div class="main_body">
 
      <div class="header_pnl">
-         <p class="text_header"> فرم ثبت نام</p>
+         <p class="text_header">  ثبت محصول</p>
      </div>
-
+        <div class="row_pnl">
+     <label>ایدی</label> 
+     <asp:Label ID="Lbl_id" runat="server" Text="ff"></asp:Label>
+ </div>
      <div class="row_pnl">
          <label>نام محصول</label>
          <asp:TextBox Class="txt_style" ID="txt_name" runat="server"></asp:TextBox>
@@ -66,9 +69,9 @@
          </div>
      <div class="row_pnl">
       
-         <asp:Button Class="btn_confirm" ID="Btn_new" runat="server" Text="جدید"  />
+         <asp:Button Class="btn_confirm" ID="Btn_new" runat="server" Text="جدید" OnClick="Btn_new_Click"  />
          <div>
-               <asp:Button Class="btn_style2" ID="Btn_edit" runat="server" Text="ویرایش"  />  
+               <asp:Button Class="btn_style2" ID="Btn_edit" runat="server" Text="ویرایش" OnClick="Btn_edit_Click"  />  
               <asp:Button Class="btn_style2" ID="Btn_delet" runat="server" Text="حذف" OnClick="Btn_delet_Click"  />
          </div>
          <asp:Button Class="btn_confirm" ID="Btn_confirm" runat="server" Text="تایید" OnClick="Btn_confirm_Click"  />
@@ -81,8 +84,9 @@
 
         <div class="left_pnl col-9 ">
             <div class="dgw_pnl">
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="SqlDataSource1" Width="1000px" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" >
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="SqlDataSource1" Width="1000px" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" >
                     <Columns>
+                        <asp:CommandField ShowSelectButton="True" />
                         <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
                         <asp:BoundField DataField="Name" HeaderText="نام" SortExpression="Name" />
                         <asp:BoundField DataField="ProduceDate" HeaderText="ProduceDate" SortExpression="ProduceDate" />
