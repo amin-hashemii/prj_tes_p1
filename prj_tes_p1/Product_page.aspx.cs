@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Ajax.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -6,6 +7,7 @@ using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Xml.Linq;
 
 namespace prj_tes_p1
 {
@@ -41,6 +43,11 @@ namespace prj_tes_p1
         protected void Button2_Click(object sender, EventArgs e)
         {
             Image1.ImageUrl = FileUpload1.FileName;
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+         
         }
     }
 }
