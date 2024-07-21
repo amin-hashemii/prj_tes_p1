@@ -63,7 +63,7 @@
                  <div class="row_pnlimage">
                      <asp:Button ID="Button2" runat="server" Text="Button" OnClick="Button2_Click" />
                        <asp:FileUpload CssClass="file_uplad" ID="FileUpload1" runat="server" />
-                   
+                     <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                  </div>
    
          </div>

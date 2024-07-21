@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
@@ -53,8 +54,29 @@ namespace prj_tes_p1
         protected void Button2_Click(object sender, EventArgs e)
         {
 
-            string f = Server.MapPath("~/img/");
-            FileUpload1.SaveAs(f + Path.GetFileName(FileUpload1.FileName));
+            //string f = Server.MapPath("~/img/");
+            //FileUpload1.SaveAs(f + Path.GetFileName(FileUpload1.FileName));
+
+            if (FileUpload1.HasFile)
+
+            {
+
+                string filePath = Server.MapPath("~/img/") + FileUpload1.FileName;
+
+                FileUpload1.SaveAs(filePath);
+
+
+                // Display the uploaded image in the Image control
+
+                Image1.ImageUrl = "~/img/" + FileUpload1.FileName;
+
+            }
+            else
+            {
+
+                Label1.Text = "Please select a file to upload!";
+
+            }
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -92,8 +114,11 @@ namespace prj_tes_p1
         {
             //GridViewRow row = GridView1.Rows[e.NewSelectedIndex];
             //txt_name.Text = row.Cells[2].Text;
-            
+
+           
         }
+
+    
 
         protected void Btn_edit_Click(object sender, EventArgs e)
         {
