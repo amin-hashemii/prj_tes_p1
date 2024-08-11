@@ -14,6 +14,7 @@
           
         <div class="page_header">
             <asp:Button ID="Button1" Class="btn_loguser"  PostBackUrl="~/User_log.aspx" runat="server" Text="ورود/ ثبت نام"  />
+             <asp:Button ID="Button3" Class="btn_view_products"  PostBackUrl="~/View_products_page.aspx" runat="server" Text="مشاهده محصولات"  />
 
         </div>
     
@@ -140,7 +141,7 @@
     width:25%;
     height:672px;
 }
-.btn_loguser {
+.btn_loguser,.btn_view_products {
   width: 160px;
   height: 40px;
   border: 1px solid black;
@@ -248,6 +249,12 @@
     })
     $(".btn_loguser").mouseleave(function () {
         $(".btn_loguser").css('background', '#2C2C2C')
+    })
+    $(".btn_view_products").mousemove(function () {
+        $(".btn_view_products").css('background', 'rgb(25, 47, 116)')
+    })
+    $(".btn_view_products").mouseleave(function () {
+        $("btn_view_products").css('background', '#2C2C2C')
     })
 
     
