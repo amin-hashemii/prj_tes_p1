@@ -58,7 +58,7 @@
                                                </div>
 
                </div>
-                                  <div class="product_body">
+       <%--                           <div class="product_body">
                                  <div class="container">
 
                                      <div class="row">
@@ -80,7 +80,7 @@
                        <label></label>
                    </div>
 
-                  <%-- ccccccccccccccccccccccccccccccc --%>
+                
        
                                          <div class="box   col-md-3" >
     <div class="internal_box">
@@ -137,8 +137,8 @@
         </div>
     </div>
                 
-</div>
-                   <%-- /////////////////// --%>
+</div>--%>
+                 
        
 
     
