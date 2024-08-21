@@ -8,6 +8,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using System.IdentityModel.Tokens;
+using System.Text.Json;
+using System.Collections;
 
 namespace prj_tes_p1
 {
@@ -17,30 +20,35 @@ namespace prj_tes_p1
         SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-MCK5EA8;Initial Catalog=db_prj_pro;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
-            show_product("");
+           // show_product("");
+            product_clear();
         }
-        
+        System.Web.UI.HtmlControls.HtmlGenericControl row =  new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
+        System.Web.UI.HtmlControls.HtmlGenericControl container =  new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
+       
+
+       
         protected void create_div_box( int i ,string img_address,string lbl_txt)
         {
-
-            //System.Web.UI.HtmlControls.HtmlGenericControl b_left =
-            //   new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
-            //b_left.ID = "b_left"+i.ToString();
-            //b_left.Attributes.Add("class", "b_left");
-            //this.Controls.Add(b_left);
-
-            //b_left.Style.Add(HtmlTextWriterStyle.Height,"1600px");
-            //b_left.Style.Add(HtmlTextWriterStyle.MarginRight,"4%");
-            //b_left.Style.Add(HtmlTextWriterStyle.BorderStyle,"1px");
-            //b_left.Style.Add(HtmlTextWriterStyle.Width,"78%");
-
-
-
             
 
+            System.Web.UI.HtmlControls.HtmlGenericControl box = new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
+            System.Web.UI.HtmlControls.HtmlGenericControl internal_box = new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
 
-            System.Web.UI.HtmlControls.HtmlGenericControl internal_box = 
-                new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
+            container.ID = "con";
+            container.Attributes.Add("class", "container");
+            product_body.Controls.Add(container);
+
+            row.ID = "row";
+            row.Attributes.Add("class", "row");
+            container.Controls.Add(row);
+            row.ID = "w";
+            box.Attributes.Add("class", "col-md-3");
+            row.Controls.Add(box);
+
+
+            //internal_box.Attributes.Add("class", "col-md-3");
+
             internal_box.ID = "internal_box"+i.ToString();
             //internal_box.Attributes.Add("class", "col-md-3");
             internal_box.Style.Add(HtmlTextWriterStyle.Height,"340px");
@@ -48,7 +56,7 @@ namespace prj_tes_p1
             internal_box.Style.Add(HtmlTextWriterStyle.MarginRight,"50px");
             internal_box.Style.Add(HtmlTextWriterStyle.Width,"240px");
             internal_box.Style.Add(HtmlTextWriterStyle.BorderStyle,"1px,solid,black");
-           this.Controls.Add(internal_box);
+           box.Controls.Add(internal_box);
 
             System.Web.UI.HtmlControls.HtmlGenericControl images_box =
                new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
@@ -70,35 +78,16 @@ namespace prj_tes_p1
             label.InnerText = i.ToString();
             label.InnerText = lbl_txt;
             internal_box.Controls.Add(label);
+           
         }
 
-        protected void dd()
-        {
-     
-            System.Web.UI.HtmlControls.HtmlGenericControl container =
-               new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
-            container.ID = "con";
-            container.Attributes.Add("class", "container");
-            this.Controls.Add(container);
-
-            System.Web.UI.HtmlControls.HtmlGenericControl row =
-             new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
-            row.ID = "row";
-            row.Attributes.Add("class", "row");
-            container.Controls.Add(row);
-
-            System.Web.UI.HtmlControls.HtmlGenericControl box =
-           new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
-            row.ID = "w";
-            box.Attributes.Add("class", "col-md-3");
-            row.Controls.Add(box);
-            
-
-        }
+       
 
         protected void TextBox1_TextChanged(object sender, EventArgs e)
         {
+           
           
+
         }
         List<System.Web.UI.WebControls.Label> labels = new List<System.Web.UI.WebControls.Label> ();
         List<Image> image_all = new List<Image> ();
@@ -120,18 +109,18 @@ namespace prj_tes_p1
                 while (reader.Read())
                 {
 
-                    if (i < 5)
-                    {
+                    
                         create_div_box(i,reader[7].ToString(), reader[1].ToString());
                         //image_all[i].ImageUrl = "~/img/" + reader[7].ToString();
                         //labels[i].Text = reader[1].ToString();
-                    }
+                 
 
                     i += 1;
                 }
                 reader.Close() ;
             }
             connect.Close();
+         
         }
         protected void product_clear()
         {
@@ -154,6 +143,36 @@ namespace prj_tes_p1
         protected void Button8_Click(object sender, EventArgs e)
         {
             show_product("تیشرت");   
+        }
+
+        protected void Button6_Click(object sender, EventArgs e)
+        {
+            show_product("");
+        }
+
+        protected void Button9_Click(object sender, EventArgs e)
+        {
+            show_product("کفش");
+        }
+
+        protected void Button12_Click(object sender, EventArgs e)
+        {
+
+            string query = "SELECT * FROM Customers WHERE Name LIKE @SearchTerm";
+            SqlCommand comand = new SqlCommand(query, connect);
+
+            comand.Parameters.AddWithValue("@SearchTerm", "%" + TextBox1.Text + "%");
+
+
+            // Execute the search query
+
+            connect.Open();
+
+            SqlDataReader reader = comand.ExecuteReader();
+
+
+            // Display the results in a DataGridView
+
         }
     }
 }

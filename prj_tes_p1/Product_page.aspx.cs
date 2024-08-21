@@ -25,7 +25,10 @@ namespace prj_tes_p1
 
         protected void Btn_confirm_Click(object sender, EventArgs e)
         {
-            string query = $" exec dbo.PR_insert_product N'{txt_name.Text}',N'{Txt_phone.Text}','{Txt_gmail.Text}',{int.Parse(txt_vasiat.Text)},'{Txt_phone_user.Text}','{FileUpload1.FileName}';";
+            string filePath = Server.MapPath("~/img/") + Label1.Text;
+
+            FileUpload1.SaveAs(filePath);
+            string query = $" exec dbo.PR_insert_product N'{txt_name.Text}',N'{Txt_phone.Text}','{Txt_gmail.Text}',{int.Parse(txt_vasiat.Text)},'{Txt_phone_user.Text}','{Label1.Text}';";
 
             using (var commit = new SqlCommand(query, connect))
             {
@@ -50,6 +53,7 @@ namespace prj_tes_p1
                 Response.Redirect("Product_page.aspx");
             }
         }
+        string file_name = "";
 
         protected void Button2_Click(object sender, EventArgs e)
         {
@@ -60,15 +64,14 @@ namespace prj_tes_p1
             if (FileUpload1.HasFile)
 
             {
-
-                string filePath = Server.MapPath("~/img/") + FileUpload1.FileName;
-
-                FileUpload1.SaveAs(filePath);
+                 file_name=FileUpload1.FileName;
+                Label1.Text = file_name;
 
 
                 // Display the uploaded image in the Image control
 
                 Image1.ImageUrl = "~/img/" + FileUpload1.FileName;
+                
 
             }
             else
@@ -123,7 +126,10 @@ namespace prj_tes_p1
 
         protected void Btn_edit_Click(object sender, EventArgs e)
         {
-            string query = $" exec sp_product_update {Lbl_id.Text}, N'{txt_name.Text}',N'{Txt_phone.Text}','{Txt_gmail.Text}';";
+            string filePath = Server.MapPath("~/img/") + Label1.Text;
+
+            FileUpload1.SaveAs(filePath);
+            string query = $" exec sp_product_update {Lbl_id.Text}, N'{txt_name.Text}',N'{Txt_phone.Text}','{Txt_gmail.Text}','{Label1.Text}';";
             using (var commit = new SqlCommand(query, connect))
             {
                 connect.Open();

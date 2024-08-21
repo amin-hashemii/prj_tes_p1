@@ -22,6 +22,7 @@
 
 
             </header>
+
             <div class="body_page">
 
                 <div class="b_right">
@@ -44,22 +45,23 @@
                         <div class="search_pro">
     <asp:TextBox CssClass="txt_search" ID="TextBox1" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
     <asp:Image ImageUrl="~/img/search.png"   CssClass="img_search" ID="Image1" runat="server" />
+                            <asp:Button ID="Button12" runat="server" OnClick="Button12_Click" Text="Button" />
 </div>
 
                                                <div class="subject">
                                               <ul class="d-flex">
-                                                     <li class="li_style_1"><asp:Button Class="btn_style_2" ID="Button6" runat="server" Text="مشاهده همه" /></li>
+                                                     <li class="li_style_1"><asp:Button Class="btn_style_2" ID="Button6" runat="server" Text="مشاهده همه" OnClick="Button6_Click" /></li>
                                                          <li class="li_style_1" ><asp:Button Class="btn_style_2" ID="Button7" runat="server" Text="شلوار " OnClick="Button7_Click" /></li>
                                                          <li class="li_style_1" > <asp:Button Class="btn_style_2" ID="Button8" runat="server" Text="تیشرت" OnClick="Button8_Click" /></li>
-                                                         <li class="li_style_1"><asp:Button Class="btn_style_2" ID="Button9" runat="server" Text="کفش " /></li>
+                                                         <li class="li_style_1"><asp:Button Class="btn_style_2" ID="Button9" runat="server" Text="کفش " OnClick="Button9_Click" /></li>
                                                          <li class="li_style_1" > <asp:Button Class="btn_style_2" ID="Button10" runat="server" Text="پیراهن" /></li>
                                                          <li class="li_style_1"><asp:Button Class="btn_style_2" ID="Button11" runat="server" Text="کلاه" /></li>
                                                    </ul>
                                                </div>
 
                </div>
-       <%--                           <div class="product_body">
-                                 <div class="container">
+                                  <div runat="server" id="product_body">
+                               <%--  <div class="container">
 
                                      <div class="row">
 
@@ -137,14 +139,14 @@
         </div>
     </div>
                 
-</div>--%>
+</div>
                  
        
 
     
 </div>
 
-                                     </div>
+                                     </div>--%>
 
                                  </div>
 
@@ -159,7 +161,8 @@
                 
 
                 </div>
-                </div>
+        </div>
+        <div  runat="server" id="mohajer"></div>
           
       
 
@@ -195,7 +198,9 @@ position: relative;
   height: 42px;
   position: absolute;
  margin: 12px 276px;
-}
+        top: 0px;
+        right: -552px;
+    }
 .txt_search {
   position: absolute;
   width: 259px;
