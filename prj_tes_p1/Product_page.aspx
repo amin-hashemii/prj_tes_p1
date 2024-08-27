@@ -30,9 +30,9 @@
      <div class="header_pnl">
          <p class="text_header">  ثبت محصول</p>
      </div>
-        <div class="row_pnl">
+        <div class="row_pnl_2">
      <label>ایدی</label> 
-     <asp:Label ID="Lbl_id" runat="server" Text="ff"></asp:Label>
+     <asp:Label  CssClass="lbl_style" ID="Lbl_id" runat="server" Text=""></asp:Label>
  </div>
      <div class="row_pnl">
          <label>نام محصول</label>
@@ -51,12 +51,15 @@
 
      <div class="row_pnl">
          <label>وضعیت</label>
-         <asp:TextBox Class="txt_style" ID="txt_vasiat" runat="server"></asp:TextBox>
+         <asp:DropDownList CssClass="txt_style" ID="list_vas" runat="server">
+             <asp:ListItem Value="1">فعال</asp:ListItem>
+             <asp:ListItem Value="0">غیر فعال</asp:ListItem>
+         </asp:DropDownList>
      </div>
 
-     <div class="row_pnl">
+     <div class="row_pnl_2">
          <label>شماره کاربر</label>
-         <asp:TextBox Class="txt_style" ID="Txt_phone_user" runat="server"></asp:TextBox>
+         <asp:Label CssClass="lbl_style" ID="lbl_username" runat="server" Text="Label"></asp:Label>
      </div>
              <div class="row_pnl">
         
@@ -64,7 +67,7 @@
                  <div class="row_pnlimage">
                        <asp:FileUpload CssClass="file_uplad" ID="FileUpload1" runat="server" />
                      <asp:Button ID="Button2" runat="server" Text="Button" OnClick="Button2_Click" />
-                     <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                     <asp:Label ID="lbl_imagename" runat="server" Text="Label"></asp:Label>
                  </div>
    
          </div>
@@ -78,6 +81,7 @@
          <asp:Button Class="btn_confirm" ID="Btn_confirm" runat="server" Text="تایید" OnClick="Btn_confirm_Click"  />
          
        
+
      </div>
 
  </div>
@@ -89,7 +93,7 @@
                     <Columns>
                         <asp:CommandField ShowSelectButton="True" />
                         <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
-                        <asp:BoundField DataField="Name" HeaderText="نام" SortExpression="Name" />
+                        <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
                         <asp:BoundField DataField="ProduceDate" HeaderText="ProduceDate" SortExpression="ProduceDate" />
                         <asp:BoundField DataField="manufactorPhone" HeaderText="manufactorPhone" SortExpression="manufactorPhone" />
                         <asp:BoundField DataField="manufactureEmail" HeaderText="manufactureEmail" SortExpression="manufactureEmail" />
@@ -107,7 +111,12 @@
                     <SortedDescendingCellStyle BackColor="#D6DFDF" />
                     <SortedDescendingHeaderStyle BackColor="#002876" />
                 </asp:GridView>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_prj_proConnectionString3 %>" SelectCommand="SELECT * FROM [products]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_prj_proConnectionString %>" SelectCommand="SELECT * FROM [products] WHERE ([phone_user] = @phone_user)">
+                    <SelectParameters>
+                        <asp:ControlParameter ControlID="lbl_username" Name="phone_user" PropertyName="Text" Type="String" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server"></asp:SqlDataSource>
             </div>
             </div>
 
@@ -160,6 +169,13 @@
      font-size: 15px;
      color:aliceblue;
    }
+   .row_pnl_2 {
+    margin-top: 9px;
+    margin-right: 20px;
+    display: flex;
+    font-size: 15px;
+    color:aliceblue;
+  }
  .txt_style {
   margin-top: 4px;
   width: 220px;
@@ -170,6 +186,14 @@
   color: aliceblue;
   font-size: 18px;
 }
+
+ .lbl_style {
+     margin-top: 4px;
+      color: aliceblue;
+ font-size: 18px;
+ margin-right:20px;
+ }
+
 .btn_confirm {
   width: 320px;
   height: 40px;

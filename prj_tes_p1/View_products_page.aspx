@@ -25,7 +25,7 @@
 
             <div class="body_page">
 
-                <div class="b_right">
+                <%--<div class="b_right">
                     <h4 style="margin-top:15px">جستجو بر اساس</h4>
                     <ul class="rdb_style">
                         <li class="list_none filter_style"> <asp:RadioButton  ID="RadioButton1" runat="server" Text="جدید ترین" TextAlign="Left" /></li>
@@ -36,7 +36,7 @@
                       
                     </ul>
 
-                </div>
+                </div>--%>
                
                 
                              <div class="b_left">
@@ -199,7 +199,7 @@ position: relative;
   position: absolute;
  margin: 12px 276px;
         top: 0px;
-        right: -552px;
+      
     }
 .txt_search {
   position: absolute;
@@ -235,12 +235,12 @@ position: relative;
 
 
 .b_right{
-    width:20%;
+    width:0%;
     border:1px solid black;
     height:600px;
 }
 .b_left{
-    width:78%;
+    width:98%;
     margin-right:4%;
     border:1px solid black;
     height:1600px;

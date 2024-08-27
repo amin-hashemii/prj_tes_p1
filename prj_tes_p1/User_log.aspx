@@ -16,7 +16,7 @@
       </div>
 
       <div class="row_pnl">
-          <label>نام کاربری</label>
+          <label>شماره تلفن</label>
           <asp:TextBox Class="txt_style" ID="Txt_username" runat="server"></asp:TextBox>
       </div>
 
@@ -35,6 +35,8 @@
                    
                   </div>
         </div>
+        <p>
+            &nbsp;</p>
     </form>
 </body>
 </html>

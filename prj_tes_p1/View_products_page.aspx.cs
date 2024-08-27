@@ -44,6 +44,7 @@ namespace prj_tes_p1
             container.Controls.Add(row);
             row.ID = "w";
             box.Attributes.Add("class", "col-md-3");
+            box.Style.Add(HtmlTextWriterStyle.MarginTop,"30px;");
             row.Controls.Add(box);
 
 
@@ -52,11 +53,12 @@ namespace prj_tes_p1
             internal_box.ID = "internal_box"+i.ToString();
             //internal_box.Attributes.Add("class", "col-md-3");
             internal_box.Style.Add(HtmlTextWriterStyle.Height,"340px");
-            internal_box.Style.Add(HtmlTextWriterStyle.BackgroundColor,"red");
-            internal_box.Style.Add(HtmlTextWriterStyle.MarginRight,"50px");
+            internal_box.Style.Add(HtmlTextWriterStyle.MarginRight,"10px");
             internal_box.Style.Add(HtmlTextWriterStyle.Width,"240px");
-            internal_box.Style.Add(HtmlTextWriterStyle.BorderStyle,"1px,solid,black");
-           box.Controls.Add(internal_box);
+            internal_box.Style.Add(HtmlTextWriterStyle.BorderStyle,"solid");
+            internal_box.Style.Add(HtmlTextWriterStyle.BorderColor, "black");
+            internal_box.Style.Add(HtmlTextWriterStyle.BorderWidth, "1.5px");
+            box.Controls.Add(internal_box);
 
             System.Web.UI.HtmlControls.HtmlGenericControl images_box =
                new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
@@ -77,8 +79,38 @@ namespace prj_tes_p1
             label.ID = "label" + i.ToString();
             label.InnerText = i.ToString();
             label.InnerText = lbl_txt;
+            label.Style.Add(HtmlTextWriterStyle.MarginRight,"70PX");
+            label.Style.Add(HtmlTextWriterStyle.MarginTop, "10PX");
+            label.Style.Add(HtmlTextWriterStyle.Display, "inherit");
             internal_box.Controls.Add(label);
-           
+
+
+
+            HtmlButton btn_1 = new HtmlButton();
+            btn_1.ID = "btn_favirit";
+            btn_1.Style.Add(HtmlTextWriterStyle.Width, "67px");
+            btn_1.Style.Add(HtmlTextWriterStyle.Height, "30px");
+            btn_1.Style.Add(HtmlTextWriterStyle.MarginTop, "5px");
+            btn_1.Style.Add(HtmlTextWriterStyle.MarginRight, "4px");
+            
+            internal_box.Controls.Add(btn_1);
+            HtmlButton btn_2 = new HtmlButton();
+            btn_2.ID = "btn_favirit";
+            btn_2.Style.Add(HtmlTextWriterStyle.Width, "70px");
+            btn_2.Style.Add(HtmlTextWriterStyle.Height, "30px");
+            btn_2.Style.Add(HtmlTextWriterStyle.MarginTop, "5px");
+            btn_2.Style.Add(HtmlTextWriterStyle.MarginRight, "10px");
+            //btn_2.Style.Add(HtmlTextWriterStyle.Display, "inherit");
+            internal_box.Controls.Add(btn_2);
+            HtmlButton btn_3 = new HtmlButton();
+            btn_3.ID = "btn_favirit";
+            btn_3.Style.Add(HtmlTextWriterStyle.Width, "70px");
+            btn_3.Style.Add(HtmlTextWriterStyle.Height, "30px");
+            btn_3.Style.Add(HtmlTextWriterStyle.MarginTop, "5px");
+            btn_3.Style.Add(HtmlTextWriterStyle.MarginRight, "10px");
+            //btn_3.Style.Add(HtmlTextWriterStyle.Display, "inherit");
+            internal_box.Controls.Add(btn_3);
+
         }
 
        
