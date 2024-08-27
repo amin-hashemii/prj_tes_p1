@@ -78,22 +78,22 @@ namespace prj_tes_p1
         protected global::System.Web.UI.WebControls.TextBox Txt_gmail;
 
         /// <summary>
-        /// txt_vasiat control.
+        /// list_vas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_vasiat;
+        protected global::System.Web.UI.WebControls.DropDownList list_vas;
 
         /// <summary>
-        /// Txt_phone_user control.
+        /// lbl_username control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Txt_phone_user;
+        protected global::System.Web.UI.WebControls.Label lbl_username;
 
         /// <summary>
         /// Image1 control.
@@ -105,15 +105,6 @@ namespace prj_tes_p1
         protected global::System.Web.UI.WebControls.Image Image1;
 
         /// <summary>
-        /// Button2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
-
-        /// <summary>
         /// FileUpload1 control.
         /// </summary>
         /// <remarks>
@@ -123,13 +114,22 @@ namespace prj_tes_p1
         protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
 
         /// <summary>
-        /// Label1 control.
+        /// Button2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Button Button2;
+
+        /// <summary>
+        /// lbl_imagename control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_imagename;
 
         /// <summary>
         /// Btn_new control.
@@ -184,5 +184,14 @@ namespace prj_tes_p1
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+
+        /// <summary>
+        /// SqlDataSource2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
     }
 }

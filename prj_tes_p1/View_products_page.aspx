@@ -22,9 +22,10 @@
 
 
             </header>
+
             <div class="body_page">
 
-                <div class="b_right">
+                <%--<div class="b_right">
                     <h4 style="margin-top:15px">جستجو بر اساس</h4>
                     <ul class="rdb_style">
                         <li class="list_none filter_style"> <asp:RadioButton  ID="RadioButton1" runat="server" Text="جدید ترین" TextAlign="Left" /></li>
@@ -35,7 +36,7 @@
                       
                     </ul>
 
-                </div>
+                </div>--%>
                
                 
                              <div class="b_left">
@@ -44,22 +45,23 @@
                         <div class="search_pro">
     <asp:TextBox CssClass="txt_search" ID="TextBox1" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
     <asp:Image ImageUrl="~/img/search.png"   CssClass="img_search" ID="Image1" runat="server" />
+                            <asp:Button ID="Button12" runat="server" OnClick="Button12_Click" Text="Button" />
 </div>
 
                                                <div class="subject">
                                               <ul class="d-flex">
-                                                     <li class="li_style_1"><asp:Button Class="btn_style_2" ID="Button6" runat="server" Text="مشاهده همه" /></li>
+                                                     <li class="li_style_1"><asp:Button Class="btn_style_2" ID="Button6" runat="server" Text="مشاهده همه" OnClick="Button6_Click" /></li>
                                                          <li class="li_style_1" ><asp:Button Class="btn_style_2" ID="Button7" runat="server" Text="شلوار " OnClick="Button7_Click" /></li>
                                                          <li class="li_style_1" > <asp:Button Class="btn_style_2" ID="Button8" runat="server" Text="تیشرت" OnClick="Button8_Click" /></li>
-                                                         <li class="li_style_1"><asp:Button Class="btn_style_2" ID="Button9" runat="server" Text="کفش " /></li>
+                                                         <li class="li_style_1"><asp:Button Class="btn_style_2" ID="Button9" runat="server" Text="کفش " OnClick="Button9_Click" /></li>
                                                          <li class="li_style_1" > <asp:Button Class="btn_style_2" ID="Button10" runat="server" Text="پیراهن" /></li>
                                                          <li class="li_style_1"><asp:Button Class="btn_style_2" ID="Button11" runat="server" Text="کلاه" /></li>
                                                    </ul>
                                                </div>
 
                </div>
-                                  <div class="product_body">
-                                 <div class="container">
+                                  <div runat="server" id="product_body">
+                               <%--  <div class="container">
 
                                      <div class="row">
 
@@ -80,7 +82,7 @@
                        <label></label>
                    </div>
 
-                  <%-- ccccccccccccccccccccccccccccccc --%>
+                
        
                                          <div class="box   col-md-3" >
     <div class="internal_box">
@@ -138,13 +140,13 @@
     </div>
                 
 </div>
-                   <%-- /////////////////// --%>
+                 
        
 
     
 </div>
 
-                                     </div>
+                                     </div>--%>
 
                                  </div>
 
@@ -159,7 +161,8 @@
                 
 
                 </div>
-                </div>
+        </div>
+        <div  runat="server" id="mohajer"></div>
           
       
 
@@ -195,7 +198,9 @@ position: relative;
   height: 42px;
   position: absolute;
  margin: 12px 276px;
-}
+        top: 0px;
+      
+    }
 .txt_search {
   position: absolute;
   width: 259px;
@@ -230,12 +235,12 @@ position: relative;
 
 
 .b_right{
-    width:20%;
+    width:0%;
     border:1px solid black;
     height:600px;
 }
 .b_left{
-    width:78%;
+    width:98%;
     margin-right:4%;
     border:1px solid black;
     height:1600px;
