@@ -130,9 +130,6 @@
     <Content Include="img\108.png" />
     <Content Include="img\109.png" />
     <Content Include="img\110.png" />
-    <Content Include="img\mocha.png" />
-    <Content Include="img\Screenshot 2024-07-21 132020.png" />
-    <Content Include="img\search.png" />
     <Content Include="Product_page.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -278,6 +275,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="image\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -27,6 +27,9 @@ namespace prj_tes_p1
             if (lbl_username.Text=="")
                 Response.Redirect("user_log.aspx");
 
+            
+            
+
 
         }
 
@@ -65,8 +68,8 @@ namespace prj_tes_p1
         protected void Button2_Click(object sender, EventArgs e)
         {
 
-            //string f = Server.MapPath("~/img/");
-            //FileUpload1.SaveAs(f + Path.GetFileName(FileUpload1.FileName));
+            string f = Server.MapPath("~/img/");
+            FileUpload1.SaveAs(f + Path.GetFileName(FileUpload1.FileName));
 
             if (FileUpload1.HasFile)
 
@@ -79,7 +82,8 @@ namespace prj_tes_p1
 
                 Image1.ImageUrl = "~/img/" + FileUpload1.FileName;
 
-                ;      
+
+
 
             }
             else
@@ -100,9 +104,12 @@ namespace prj_tes_p1
             Txt_gmail.Text = GridView1.SelectedRow.Cells[5].Text;
            list_vas.Text = GridView1.SelectedRow.Cells[6].Text;
             lbl_username.Text = GridView1.SelectedRow.Cells[7].Text;
-
             lbl_imagename.Text= GridView1.SelectedRow.Cells[8].Text;
 
+            //Btn_confirm.Enabled = false;
+
+            //Btn_edit.Enabled = true;
+            //Btn_delet.Enabled = true;
 
         }
         public void empity()
@@ -113,6 +120,7 @@ namespace prj_tes_p1
             Txt_gmail.Text = "";
             list_vas.Text = "";
             lbl_username.Text = "";
+            lbl_imagename.Text = "بدون عکس";
            
             
            
@@ -120,6 +128,8 @@ namespace prj_tes_p1
         protected void Btn_new_Click(object sender, EventArgs e)
         {
             empity();
+      
+            
         }
 
         protected void GridView1_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)

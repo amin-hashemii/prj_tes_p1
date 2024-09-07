@@ -13,7 +13,6 @@
     
           
         <div class="page_header">
-            <asp:Button ID="Button1" Class="btn_loguser"  PostBackUrl="~/User_log.aspx" runat="server" Text="ورود/ ثبت نام"  />
              <asp:Button ID="Button3" Class="btn_view_products"  PostBackUrl="~/View_products_page.aspx" runat="server" Text="مشاهده محصولات"  />
 
         </div>
@@ -75,7 +74,7 @@
       
          <asp:Button Class="btn_confirm" ID="Btn_new" runat="server" Text="جدید" OnClick="Btn_new_Click"  />
          <div>
-               <asp:Button Class="btn_style2" ID="Btn_edit" runat="server" Text="ویرایش" OnClick="Btn_edit_Click"  />  
+               <asp:Button Class="btn_style2" ID="Btn_edit" runat="server" Text="ویرایش" OnClick="Btn_edit_Click" Height="28px" Width="154px"  />  
               <asp:Button Class="btn_style2" ID="Btn_delet" runat="server" Text="حذف" OnClick="Btn_delet_Click"  />
          </div>
          <asp:Button Class="btn_confirm" ID="Btn_confirm" runat="server" Text="تایید" OnClick="Btn_confirm_Click"  />
